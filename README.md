@@ -12,7 +12,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 | Visão geral das listas | Criando nova lista | Menu lateral |
 |:---:|:---:|:---:|
-| ![Listas](screenshots/13_home_listas.png) | ![Nova Lista](screenshots/12_home_nova_lista.png) | ![Menu Lateral](screenshots/14_menu_lateral.png) |
+| ![Listas](Imagens/13_home_listas.png) | ![Nova Lista](Imagens/12_home_nova_lista.png) | ![Menu Lateral](Imagens/14_menu_lateral.png) |
 | Listas do mês agrupadas com resumo de itens, total e tags dos produtos | Formulário inline com seleção de mercado e opção de adicionar novo | Navegação entre Listas, Análise, Configurações e Sobre |
 
 ---
@@ -21,7 +21,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 | Itens da lista | Menu de ordenação | Editar item |
 |:---:|:---:|:---:|
-| ![Itens](screenshots/10_lista_itens.png) | ![Ordenação](screenshots/09_lista_menu_ordenacao.png) | ![Editar](screenshots/11_editar_item.png) |
+| ![Itens](Imagens/10_lista_itens.png) | ![Ordenação](Imagens/09_lista_menu_ordenacao.png) | ![Editar](Imagens/11_editar_item.png) |
 | Itens com checkbox, quantidade, preço unitário e total | 6 ordenações + filtros de variação de preço + ações em lote | Edição com comparação de preço em tempo real e subtotal |
 
 ---
@@ -30,7 +30,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 | Análise anual | Análise mensal | Comparação de mercados |
 |:---:|:---:|:---:|
-| ![Anual](screenshots/08_analise_anual.png) | ![Mensal](screenshots/07_analise_mensal.png) | ![Mercados](screenshots/06_analise_mercados.png) |
+| ![Anual](Imagens/08_analise_anual.png) | ![Mensal](Imagens/07_analise_mensal.png) | ![Mercados](Imagens/06_analise_mercados.png) |
 | Gráfico de barras por mês com total anual | Gráfico por lista do mês com total e navegação entre meses | Ranking de mercados por preço médio por compra |
 
 ---
@@ -39,7 +39,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 | Navegação | Aparência | Tamanho da fonte | Dados |
 |:---:|:---:|:---:|:---:|
-| ![Navegação](screenshots/05_configuracoes_navegacao.png) | ![Aparência](screenshots/04_configuracoes_aparencia.png) | ![Fonte](screenshots/03_configuracoes_fonte.png) | ![Dados](screenshots/02_configuracoes_dados.png) |
+| ![Navegação](Imagens/05_configuracoes_navegacao.png) | ![Aparência](Imagens/04_configuracoes_aparencia.png) | ![Fonte](Imagens/03_configuracoes_fonte.png) | ![Dados](Imagens/02_configuracoes_dados.png) |
 | Gesto de deslize e posição do botão ☰ | 7 paletas com modo escuro/claro | Slider de tamanho com preview ao vivo | Backup, restauração e limpeza de dados |
 
 ---
@@ -48,7 +48,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 | Tela Sobre |
 |:---:|
-| ![Sobre](screenshots/01_sobre.png) |
+| ![Sobre](Imagens/01_sobre.png) |
 | Versão, desenvolvedor e contato |
 
 ---
@@ -143,7 +143,7 @@ lista-compras-android/
 │       └── gradle-wrapper.properties # Gradle 8.5
 ├── src/
 │   └── App.jsx                       # Código-fonte React (~2200 linhas)
-├── screenshots/                      # Screenshots do app
+├── Imagens/                      # Screenshots do app
 ├── README.md                         # Este arquivo (pt-BR)
 └── README_EN.md                      # Versão em inglês
 ```
