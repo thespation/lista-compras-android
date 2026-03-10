@@ -6,6 +6,53 @@ A native Android shopping list app with price history, spending analysis, and mu
 
 ---
 
+## 📸 Screenshots
+
+### 🛒 Main Screen — Lists
+
+| Lists overview | Creating a new list | Side menu |
+|:---:|:---:|:---:|
+| ![Lists](Imagens/13_home_listas.png) | ![New List](Imagens/12_home_nova_lista.png) | ![Side Menu](Imagens/14_menu_lateral.png) |
+| Monthly lists grouped with item summary, total, and product tags | Inline form with store selection and option to add a new store | Navigation between Lists, Analysis, Settings, and About |
+
+---
+
+### 📦 Inside a List
+
+| List items | Sorting menu | Edit item |
+|:---:|:---:|:---:|
+| ![Items](Imagens/10_lista_itens.png) | ![Sorting](Imagens/09_lista_menu_ordenacao.png) | ![Edit](Imagens/11_editar_item.png) |
+| Items with checkbox, quantity, unit price, and total | 6 sort options + price variation filters + bulk actions | Edit with real-time price comparison and subtotal |
+
+---
+
+### 📊 Spending Analysis
+
+| Annual analysis | Monthly analysis | Store comparison |
+|:---:|:---:|:---:|
+| ![Annual](Imagens/08_analise_anual.png) | ![Monthly](Imagens/07_analise_mensal.png) | ![Stores](Imagens/06_analise_mercados.png) |
+| Horizontal bar chart by month with annual total | Bar chart per list with monthly total and month navigation | Store ranking by average price per purchase |
+
+---
+
+### ⚙️ Settings
+
+| Navigation | Appearance | Font size | Data |
+|:---:|:---:|:---:|:---:|
+| ![Navigation](Imagens/05_configuracoes_navegacao.png) | ![Appearance](Imagens/04_configuracoes_aparencia.png) | ![Font](Imagens/03_configuracoes_fonte.png) | ![Data](Imagens/02_configuracoes_dados.png) |
+| Swipe gesture and ☰ button position | 7 themes with dark/light mode | Size slider with live preview | Backup, restore, and data wipe |
+
+---
+
+### ℹ️ About
+
+| About screen |
+|:---:|
+| ![About](Imagens/01_sobre.png) |
+| Version, developer, and contact info |
+
+---
+
 ## 📱 Download & Installation
 
 1. Go to the [Releases](https://github.com/thespation/lista-compras-android/releases) page
@@ -22,8 +69,8 @@ A native Android shopping list app with price history, spending analysis, and mu
 ### 🛒 Shopping Lists
 
 - **Create lists** with a custom name, automatic date, and selectable store
-- **Organized by month** — current month is expanded by default; older months are hidden behind a "View history" button
-- **Duplicate a list** — copies all items to a new list, with the option to zero out prices and change the store
+- **Organized by month** — current month expanded by default; older months behind a "View history" button
+- **Duplicate a list** — copies all items, with options to zero out prices and change the store
 - **Global search** — filter lists by name, store, or item
 - **Edit name & store** — tap the list header to edit inline
 - **Delete list** directly from the main screen
@@ -31,36 +78,29 @@ A native Android shopping list app with price history, spending analysis, and mu
 ### 📦 List Items
 
 - **Add items** with name, quantity, and price
-- **Autocomplete** — suggests item names used in previous lists
-- **Automatic price comparison** — while typing the price, shows ▼ cheaper or ▲ more expensive compared to the last purchase
-- **Price arrow persists** on the item after adding (does not disappear)
-- **Check/uncheck** items as purchased using a checkbox
-- **Edit item** — tap ✏️ to fix name, quantity, or price; the price comparison is recalculated on save
-- **6 sorting options:**
-  - Insertion order
-  - Alphabetical (A→Z)
-  - Alphabetical + checked items last
-  - Insertion + checked items last
-  - Checked items first
-  - Lowest total price first
-- **Price variation filter** — show only items that got cheaper or more expensive
+- **Autocomplete** — suggests names from previous purchases
+- **Automatic price comparison** — shows ▼ cheaper or ▲ more expensive vs. last purchase
+- **Permanent price arrow** — stays visible even after checking the item
+- **Check/uncheck** items as purchased
+- **Edit item** — tap ✏️ to fix name, quantity, or price
+- **6 sorting options**: insertion order, alphabetical, price, checked first/last
+- **Price variation filter** — show only cheaper or pricier items
 - **Live list total** updated in real time
 - **Check all / Uncheck all** in one tap
 
 ### 📊 Spending Analysis
 
-- **Monthly spending** — bar chart showing total per month
-- **Store comparison** — total and average per establishment
-- **Price history per product** — line chart showing the variation of any item over time
-- **History table** per product with date, store, and price
-- **Recent lists** with a quick summary and direct access
+- **Annual spending** — horizontal chart and number table by month
+- **Monthly spending** — bar chart per list with monthly total
+- **Store comparison** — total and average per store
+- **Price history per product** — line chart with full history
 - Navigate between months to compare periods
 
 ### ⚙️ Settings
 
 #### Navigation
 - Enable/disable swipe gesture to open the side menu
-- Menu button position (top-left, top-right, or bottom)
+- Menu button position (6 positions available)
 
 #### Appearance
 - **7 color themes**, each with dark and light mode:
@@ -71,26 +111,14 @@ A native Android shopping list app with price history, spending analysis, and mu
   - 🟣 **Catppuccin** — pastel techno
   - ⚫ **Meia-Noite** (Midnight) — OLED, pure black `#000000`
   - 📄 **Papel** (Paper) — ink on paper, pure white `#ffffff`
-- Quick toggle between **dark mode** and **light mode**
 
 #### Font
-- Font size control (11px to 22px) with slider and +/− buttons
-- Live preview
-
-#### Stores
-- Add, edit, and remove custom store names
-- Used when creating or editing lists
+- Size control (11px to 22px) with slider and +/− buttons
 
 #### Data
-- **💾 Save backup now** — saves a snapshot to the app's internal storage with date and time
-- **📂 View and restore backups** — lists all saved backups with name, number of lists, and size; allows restoring (with overwrite confirmation) or deleting each backup individually
-- **🗑 Delete all data** — confirmation modal before erasing
-
-### ℹ️ About
-Accessible via the side menu → "About the app" button:
-- App version
-- Developer name
-- Contact email
+- **💾 Save backup now** — snapshot saved to app's internal storage
+- **📂 View and restore backups** — list, restore, or delete individual backups
+- **🗑 Delete all data** — with confirmation modal
 
 ---
 
@@ -101,34 +129,21 @@ lista-compras-android/
 ├── android/                          # Android Studio project
 │   ├── app/
 │   │   ├── build.gradle              # Module config (AGP 8.3.2, compileSdk 34)
-│   │   ├── proguard-rules.pro
 │   │   └── src/main/
-│   │       ├── AndroidManifest.xml   # Permissions and Activity config
+│   │       ├── AndroidManifest.xml   # No internet permission — 100% offline
 │   │       ├── assets/public/
-│   │       │   ├── index.html        # Full app (embedded bundle, ~256KB)
+│   │       │   ├── index.html        # Full embedded app (~263KB)
 │   │       │   └── bundle.js         # Minified React bundle
 │   │       ├── java/com/listacompras/app/
 │   │       │   └── MainActivity.java # WebView + back button + dark mode bridge
 │   │       └── res/
-│   │           ├── mipmap-*/         # Icons for all densities (mdpi→xxxhdpi)
-│   │           └── values/
-│   │               ├── strings.xml
-│   │               └── themes.xml    # Theme.Material.Light.NoActionBar
-│   ├── build.gradle                  # Root build (plugins)
-│   ├── settings.gradle               # Repositories and modules
-│   ├── gradle.properties
+│   │           ├── mipmap-*/         # Icons for all densities
+│   │           └── values/themes.xml # Theme.Material.Light.NoActionBar
 │   └── gradle/wrapper/
 │       └── gradle-wrapper.properties # Gradle 8.5
-├── dist/
-│   ├── index.html                    # Same as android/assets/public/
-│   └── bundle.js
 ├── src/
-│   ├── App.jsx                       # React source (~2100 lines)
-│   ├── main.jsx                      # Entry point
-│   └── main-bundle.jsx               # Entry for esbuild
-├── capacitor.config.json
-├── package.json
-├── vite.config.js
+│   └── App.jsx                       # React source (~2200 lines)
+├── Imagens/                      # App screenshots
 ├── README.md                         # Portuguese version
 └── README_EN.md                      # This file
 ```
@@ -147,7 +162,6 @@ lista-compras-android/
 | **Gradle** | 8.5 | Android build system |
 | **Android Gradle Plugin** | 8.3.2 | Android build plugin |
 | **localStorage** | Web API | Data persistence and backups |
-| **CSS-in-JS** | — | Styling via inline style objects |
 
 > No external frameworks, no database, no server, no internet.
 
@@ -155,16 +169,9 @@ lista-compras-android/
 
 ## 🏗️ Architecture
 
-The app is a **Single Page Application (SPA)** built with React and bundled by esbuild into a single ~256KB `index.html` file. This file is loaded by a native Android `WebView`.
-
-### Data flow
-```
-User interaction → React state → localStorage (automatic persistence)
-```
+The app is a **Single Page Application (SPA)** built with React and bundled by esbuild into a single ~263KB `index.html`. This file is loaded by a native Android `WebView`.
 
 ### Java ↔ JavaScript Bridge
-
-`MainActivity.java` injects global variables into JavaScript:
 
 ```javascript
 window.__androidDarkMode   // boolean — Android system theme
@@ -172,9 +179,7 @@ window.__androidBack       // function — back button handler
 window.__drawerOpen        // boolean — side menu state
 ```
 
-### Persistence
-
-All data is stored in the WebView's `localStorage`:
+### Persistence (localStorage)
 
 | Key | Content |
 |---|---|
@@ -187,12 +192,6 @@ All data is stored in the WebView's `localStorage`:
 
 ## 📲 How to Build the APK
 
-### Prerequisites
-- [Android Studio](https://developer.android.com/studio) (Hedgehog or newer)
-- JDK 17 or 21
-
-### Steps
-
 ```bash
 # 1. Clone the repository
 git clone https://github.com/thespation/lista-compras-android.git
@@ -200,46 +199,18 @@ git clone https://github.com/thespation/lista-compras-android.git
 # 2. Open Android Studio
 # File → Open → select the android/ folder
 
-# 3. Wait for Gradle to sync (first time may take ~5 min)
+# 3. If you see "Invalid Gradle JDK": click "Use Embedded JDK"
 
-# 4. Build the APK
-# Build → Build Bundle(s) / APK(s) → Build APK(s)
+# 4. Wait for Gradle to sync
 
-# 5. The APK will be at:
-# android/app/build/outputs/apk/debug/app-debug.apk
-```
-
-### Rebuild the bundle (if you modify App.jsx)
-
-```bash
-# Install esbuild globally
-npm install -g esbuild
-
-# Compile JSX
-esbuild src/main-bundle.jsx \
-  --bundle --minify --jsx=automatic \
-  --platform=browser --target=es2017 \
-  --outfile=dist/bundle.js
-
-# Copy to Android assets
-cp dist/bundle.js android/app/src/main/assets/public/bundle.js
-
-# Rebuild index.html embedding the bundle
-# (see build script in the project)
+# 5. Build → Build Bundle(s) / APK(s) → Build APK(s)
+# APK at: android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ---
 
-## 🎮 App Navigation
+## 🎮 Navigation — Android Back Button
 
-### Side Menu (Drawer)
-Opened via the ☰ button or by swiping from the left edge:
-- 🛒 **Lists** — main screen
-- 📊 **Analysis** — charts and history
-- ⚙️ **Settings** — preferences
-- ℹ️ **About** — version and contact
-
-### Back Button (Android)
 Cascading behavior:
 1. Closes any open modal
 2. Closes the side menu if open
@@ -260,4 +231,4 @@ Cascading behavior:
 
 ## 📄 License
 
-This project is for personal use. Feel free to use it as a reference or as a base for your own projects.
+This project is for personal use. Feel free to use it as a reference or base for your own projects.
