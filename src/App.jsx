@@ -78,6 +78,44 @@ const PALETTES = {
       navBg: "#f0e9e0", shadow: "rgba(180,99,122,0.25)",
     },
   },
+  meiaNoite: {
+    name: "Meia-Noite",
+    dark: {
+      bg: "#000000", bg2: "#0a0a0a", bg3: "#111111", bg4: "#1a1a1a",
+      text: "#ffffff", text2: "#cccccc", text3: "#666666", text4: "#333333",
+      accent: "#4fc3f7", accentBg: "#4fc3f722", accentBorder: "#4fc3f744",
+      accentText: "#000000", border: "#111111",
+      up: "#ff5252", upBg: "#ff525222", down: "#69f0ae", downBg: "#69f0ae22",
+      navBg: "#000000", shadow: "rgba(79,195,247,0.3)",
+    },
+    light: {
+      bg: "#f5f5f5", bg2: "#eeeeee", bg3: "#e0e0e0", bg4: "#bdbdbd",
+      text: "#212121", text2: "#424242", text3: "#757575", text4: "#9e9e9e",
+      accent: "#0288d1", accentBg: "#0288d118", accentBorder: "#0288d144",
+      accentText: "#ffffff", border: "#e0e0e0",
+      up: "#d32f2f", upBg: "#d32f2f18", down: "#388e3c", downBg: "#388e3c18",
+      navBg: "#eeeeee", shadow: "rgba(2,136,209,0.25)",
+    },
+  },
+  papel: {
+    name: "Papel",
+    dark: {
+      bg: "#000000", bg2: "#0d0d0d", bg3: "#1a1a1a", bg4: "#262626",
+      text: "#f5f0e8", text2: "#c8bfa8", text3: "#6b6050", text4: "#3d3530",
+      accent: "#e8c97a", accentBg: "#e8c97a22", accentBorder: "#e8c97a44",
+      accentText: "#000000", border: "#1a1a1a",
+      up: "#e07070", upBg: "#e0707022", down: "#7ec88a", downBg: "#7ec88a22",
+      navBg: "#000000", shadow: "rgba(232,201,122,0.3)",
+    },
+    light: {
+      bg: "#ffffff", bg2: "#fafaf8", bg3: "#f2f0eb", bg4: "#e8e4db",
+      text: "#1a1410", text2: "#4a3f2f", text3: "#8a7a60", text4: "#b8a888",
+      accent: "#7a5c20", accentBg: "#7a5c2018", accentBorder: "#7a5c2044",
+      accentText: "#ffffff", border: "#e8e4db",
+      up: "#b03030", upBg: "#b0303018", down: "#2a7a3a", downBg: "#2a7a3a18",
+      navBg: "#f2f0eb", shadow: "rgba(122,92,32,0.2)",
+    },
+  },
   catppuccin: {
     name: "Catppuccin",
     dark: {
@@ -317,7 +355,7 @@ export default function App() {
 
   // Analysis
   const [analysisTab, setAnalysisTab] = useState("monthly");
-  const [chartMode, setChartMode] = useState("bars"); // bars | hbars | numbers
+  const [chartMode, setChartMode] = useState("hbars"); // hbars | numbers (bars removed from annual)
   const [analysisMonth, setAnalysisMonth] = useState(() => monthKey(todayStr()));
 
   // Settings
@@ -951,9 +989,9 @@ export default function App() {
           }}>
             <div style={{ display: "flex", gap: 10, marginBottom: 14 }}>
               {[
-                { label: "Hoje", value: data.lists.filter((l) => l.date === todayStr()).length + " listas" },
+                { label: "Listas", value: (() => { const n = data.lists.filter((l) => monthKey(l.date) === monthKey(todayStr())).length; return n + (n === 1 ? " lista" : " listas"); })() },
                 { label: "Este mês", value: fmt(data.lists.filter((l) => monthKey(l.date) === monthKey(todayStr())).reduce((s, l) => s + listTotal(l), 0)) },
-                { label: "Produtos", value: Object.keys(data.priceHistory).length },
+                { label: "Produtos", value: (() => { const curMk = monthKey(todayStr()); const lists = data.lists.filter((l) => monthKey(l.date) === curMk); const names = new Set(lists.flatMap((l) => l.items.map((i) => i.name.toLowerCase()))); return names.size; })() },
               ].map((s) => (
                 <div key={s.label} style={{ flex: 1, background: t.bg3, border: `1px solid ${t.border}`, borderRadius: 10, padding: "10px 8px" }}>
                   <div style={{ fontSize: fs - 6, color: t.text3, letterSpacing: 1 }}>{s.label.toUpperCase()}</div>
@@ -1080,7 +1118,7 @@ export default function App() {
                               </div>
                               <div style={{ textAlign: "right", flexShrink: 0, marginLeft: 10 }}>
                                 <div style={{ color: t.accent, fontWeight: "bold", fontSize: fs + 3 }}>{fmt(listTotal(list))}</div>
-                                <div style={{ fontSize: fs - 4, color: t.text3 }}>{list.items.length} itens</div>
+                                <div style={{ fontSize: fs - 4, color: t.text3 }}>{list.items.length} vol · {list.items.reduce((s,i)=>s+(parseInt(i.qty,10)||1),0)} itens</div>
                               </div>
                             </div>
                             {list.items.length > 0 && (
@@ -1426,7 +1464,7 @@ export default function App() {
                     </div>
                     <div style={{ fontSize: fs - 3, color: t.text3, display: "flex", alignItems: "center", gap: 5 }}>
                       <span>{item.qty}x {fmt(item.price)}</span>
-                      {hint && !item.checked && (
+                      {hint && (
                         <span style={{
                           color: hint.arrow === "down" ? t.down : t.up,
                           fontWeight: "bold", fontSize: fs - 4, lineHeight: 1,
@@ -1474,7 +1512,7 @@ export default function App() {
             {analysisTab === "annual" && (
               <div>
                 <div style={{ display: "flex", gap: 7, marginBottom: 18 }}>
-                  {[["bars", "📊 Barras"], ["hbars", "↔ Horizontal"], ["numbers", "🔢 Números"]].map(([k, l]) => (
+                  {[["hbars", "↔ Horizontal"], ["numbers", "🔢 Números"]].map(([k, l]) => (
                     <button key={k} onClick={() => setChartMode(k)} style={tabBtn(chartMode === k)}>{l}</button>
                   ))}
                 </div>
@@ -1916,14 +1954,14 @@ export default function App() {
           <div style={{ textAlign: "center", marginBottom: 32 }}>
             <div style={{ fontSize: 56, marginBottom: 10 }}>🛒</div>
             <div style={{ fontSize: fs + 8, fontWeight: "bold", color: t.accent }}>Lista de Compras</div>
-            <div style={{ fontSize: fs - 2, color: t.text3, marginTop: 6 }}>Versão 1.0</div>
+            <div style={{ fontSize: fs - 2, color: t.text3, marginTop: 6 }}>Versão 1.1</div>
           </div>
 
           {/* Info cards */}
           {[
             { icon: "👨‍💻", label: "Desenvolvedor", value: "William Santos" },
             { icon: "✉️", label: "Contato", value: "thespation@gmail.com" },
-            { icon: "📦", label: "Versão", value: "1.0" },
+            { icon: "📦", label: "Versão", value: "1.1" },
           ].map(({ icon, label, value }) => (
             <div key={label} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 16px", background: t.bg2, border: `1px solid ${t.border}`, borderRadius: 12, marginBottom: 10 }}>
               <span style={{ fontSize: fs + 4 }}>{icon}</span>
