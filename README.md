@@ -46,10 +46,10 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 ### ℹ️ Sobre
 
-| Tela Sobre |
-|:---:|
-| ![Sobre](Imagens/01_sobre.png) |
-| Versão, desenvolvedor e contato |
+<div align="center">
+  <img src="Imagens/01_sobre.png" width="280" alt="Tela Sobre"/>
+  <br/><sub>Versão, desenvolvedor e contato</sub>
+</div>
 
 ---
 
