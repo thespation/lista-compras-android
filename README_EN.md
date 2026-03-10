@@ -46,10 +46,10 @@ A native Android shopping list app with price history, spending analysis, and mu
 
 ### ℹ️ About
 
-| About screen |
-|:---:|
-| ![About](Imagens/01_sobre.png) |
-| Version, developer, and contact info |
+<div align="center">
+  <img src="Imagens/01_sobre.png" width="280" alt="About screen"/>
+  <br/><sub>Version, developer, and contact info</sub>
+</div>
 
 ---
 
