@@ -2,6 +2,14 @@
 
 > **[🇧🇷 Leia em Português](README.md)**
 
+<div align="center">
+
+![Version](https://img.shields.io/badge/version-1.2-5e81ac)
+![Downloads](https://img.shields.io/github/downloads/thespation/lista-compras-android/total?label=downloads&color=81a1c1)
+![Android](https://img.shields.io/badge/android-5.1%2B-88c0d0)
+
+</div>
+
 A native Android shopping list app with price history, spending analysis, and multiple color themes. Works **100% offline** — no data ever leaves your device.
 
 ---
@@ -48,7 +56,7 @@ A native Android shopping list app with price history, spending analysis, and mu
 
 <div align="center">
   <img src="Imagens/01_sobre.png" width="280" alt="About screen"/>
-  <br/><sub>Version, developer, and contact info</sub>
+  <br/><sub>Version, developer, and update checker</sub>
 </div>
 
 ---
@@ -69,11 +77,11 @@ A native Android shopping list app with price history, spending analysis, and mu
 ### 🛒 Shopping Lists
 
 - **Create lists** with a custom name, automatic date, and selectable store
-- **Organized by month** — current month expanded by default; older months behind a "View history" button
+- **Organized by month** — current month expanded by default; older months behind a "Previous months" button, grouped by year and month, each collapsible individually
 - **Duplicate a list** — copies all items, with options to zero out prices and change the store
 - **Global search** — filter lists by name, store, or item
 - **Edit name & store** — tap the list header to edit inline
-- **Delete list** directly from the main screen
+- **Delete list** — with confirmation to prevent accidental removal
 
 ### 📦 List Items
 
@@ -120,6 +128,11 @@ A native Android shopping list app with price history, spending analysis, and mu
 - **📂 View and restore backups** — list, restore, or delete individual backups
 - **🗑 Delete all data** — with confirmation modal
 
+### 🔄 Updates
+- **"Check for updates"** button in the About screen — queries GitHub and shows the changelog when a new version is available
+- Direct APK download with one tap, no need to visit the website
+- Manual check only — no background data usage
+
 ---
 
 ## 🗂️ Project Structure
@@ -130,9 +143,9 @@ lista-compras-android/
 │   ├── app/
 │   │   ├── build.gradle              # Module config (AGP 8.3.2, compileSdk 34)
 │   │   └── src/main/
-│   │       ├── AndroidManifest.xml   # No internet permission — 100% offline
+│   │       ├── AndroidManifest.xml   # Internet permission for update checks only
 │   │       ├── assets/public/
-│   │       │   ├── index.html        # Full embedded app (~263KB)
+│   │       │   ├── index.html        # Full embedded app (~266KB)
 │   │       │   └── bundle.js         # Minified React bundle
 │   │       ├── java/com/listacompras/app/
 │   │       │   └── MainActivity.java # WebView + back button + dark mode bridge
@@ -143,7 +156,7 @@ lista-compras-android/
 │       └── gradle-wrapper.properties # Gradle 8.5
 ├── src/
 │   └── App.jsx                       # React source (~2200 lines)
-├── Imagens/                      # App screenshots
+├── Imagens/                          # App screenshots
 ├── README.md                         # Portuguese version
 └── README_EN.md                      # This file
 ```
@@ -163,13 +176,13 @@ lista-compras-android/
 | **Android Gradle Plugin** | 8.3.2 | Android build plugin |
 | **localStorage** | Web API | Data persistence and backups |
 
-> No external frameworks, no database, no server, no internet.
+> No external frameworks, no database, no server. Data saved 100% on the device.
 
 ---
 
 ## 🏗️ Architecture
 
-The app is a **Single Page Application (SPA)** built with React and bundled by esbuild into a single ~263KB `index.html`. This file is loaded by a native Android `WebView`.
+The app is a **Single Page Application (SPA)** built with React and bundled by esbuild into a single ~266KB `index.html`. This file is loaded by a native Android `WebView`.
 
 ### Java ↔ JavaScript Bridge
 
