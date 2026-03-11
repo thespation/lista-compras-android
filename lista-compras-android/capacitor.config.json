@@ -1,0 +1,8 @@
+{
+  "appId": "com.listacompras.app",
+  "appName": "Lista de Compras",
+  "webDir": "dist",
+  "android": {
+    "allowMixedContent": false
+  }
+}
