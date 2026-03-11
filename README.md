@@ -2,6 +2,14 @@
 
 > **[🇺🇸 Read in English](README_EN.md)**
 
+<div align="center">
+
+![Versão](https://img.shields.io/badge/versão-1.2-5e81ac)
+![Downloads](https://img.shields.io/github/downloads/thespation/lista-compras-android/total?label=downloads&color=81a1c1)
+![Android](https://img.shields.io/badge/android-5.1%2B-88c0d0)
+
+</div>
+
 Aplicativo Android nativo para gerenciar listas de compras com histórico de preços, análise de gastos e múltiplas paletas de cores. Funciona **100% offline** — nenhum dado sai do celular.
 
 ---
@@ -48,7 +56,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 <div align="center">
   <img src="Imagens/01_sobre.png" width="280" alt="Tela Sobre"/>
-  <br/><sub>Versão, desenvolvedor e contato</sub>
+  <br/><sub>Versão, desenvolvedor e verificação de atualizações</sub>
 </div>
 
 ---
@@ -69,11 +77,11 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 ### 🛒 Listas de Compras
 
 - **Criar listas** com nome, data automática e mercado selecionável
-- **Organização por mês** — o mês atual aparece expandido; meses anteriores ficam atrás do botão "Ver histórico"
+- **Organização por mês** — o mês atual aparece expandido; meses anteriores ficam atrás do botão "Meses anteriores", agrupados por ano e mês, cada um colapsável individualmente
 - **Duplicar lista** — copia todos os itens para uma nova lista, com opção de zerar os valores e trocar o mercado
 - **Busca global** — filtra listas por nome, mercado ou itens
 - **Editar nome e mercado** — toque no cabeçalho da lista para editar inline
-- **Remover lista** diretamente da tela principal
+- **Remover lista** — com confirmação para evitar exclusão acidental
 
 ### 📦 Itens da Lista
 
@@ -120,6 +128,11 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 - **📂 Ver e restaurar backups** — lista, restaura ou exclui backups individuais
 - **🗑 Apagar todos os dados** — com confirmação
 
+### 🔄 Atualizações
+- Botão **"Verificar atualização"** na tela Sobre — consulta o GitHub e exibe o changelog quando há novidade
+- Download do APK mais recente com um toque, sem precisar acessar o site
+- Verificação manual, sem consumo de dados em background
+
 ---
 
 ## 🗂️ Estrutura do Projeto
@@ -130,9 +143,9 @@ lista-compras-android/
 │   ├── app/
 │   │   ├── build.gradle              # Config do módulo (AGP 8.3.2, compileSdk 34)
 │   │   └── src/main/
-│   │       ├── AndroidManifest.xml   # Sem permissões de internet — 100% offline
+│   │       ├── AndroidManifest.xml   # Permissão de internet apenas para verificar atualizações
 │   │       ├── assets/public/
-│   │       │   ├── index.html        # App completo embutido (~263KB)
+│   │       │   ├── index.html        # App completo embutido (~266KB)
 │   │       │   └── bundle.js         # Bundle React minificado
 │   │       ├── java/com/listacompras/app/
 │   │       │   └── MainActivity.java # WebView + back button + dark mode bridge
@@ -143,7 +156,7 @@ lista-compras-android/
 │       └── gradle-wrapper.properties # Gradle 8.5
 ├── src/
 │   └── App.jsx                       # Código-fonte React (~2200 linhas)
-├── Imagens/                      # Screenshots do app
+├── Imagens/                          # Screenshots do app
 ├── README.md                         # Este arquivo (pt-BR)
 └── README_EN.md                      # Versão em inglês
 ```
@@ -163,13 +176,13 @@ lista-compras-android/
 | **Android Gradle Plugin** | 8.3.2 | Plugin de build Android |
 | **localStorage** | Web API | Persistência de dados e backups |
 
-> Sem frameworks externos, sem banco de dados, sem servidor, sem internet.
+> Sem frameworks externos, sem banco de dados, sem servidor. Dados salvos 100% no dispositivo.
 
 ---
 
 ## 🏗️ Arquitetura
 
-O app é uma **Single Page Application (SPA)** React compilada com esbuild em um único arquivo `index.html` de ~263KB. Esse arquivo é carregado por uma `WebView` Android nativa.
+O app é uma **Single Page Application (SPA)** React compilada com esbuild em um único arquivo `index.html` de ~266KB. Esse arquivo é carregado por uma `WebView` Android nativa.
 
 ### Bridge Java ↔ JavaScript
 
