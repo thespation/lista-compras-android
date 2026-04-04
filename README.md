@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![Versão](https://img.shields.io/badge/versão-1.2-5e81ac)
+![Versão](https://img.shields.io/badge/versão-1.5-5e81ac)
 ![Downloads](https://img.shields.io/github/downloads/thespation/lista-compras-android/total?label=downloads&color=81a1c1)
 ![Android](https://img.shields.io/badge/android-5.1%2B-88c0d0)
 
@@ -18,10 +18,10 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 ### 🛒 Tela Principal — Listas
 
-| Visão geral das listas | Criando nova lista | Menu lateral |
-|:---:|:---:|:---:|
-| ![Listas](Imagens/13_home_listas.png) | ![Nova Lista](Imagens/12_home_nova_lista.png) | ![Menu Lateral](Imagens/14_menu_lateral.png) |
-| Listas do mês agrupadas com resumo de itens, total e tags dos produtos | Formulário inline com seleção de mercado e opção de adicionar novo | Navegação entre Listas, Análise, Configurações e Sobre |
+| Visão geral das listas | Criando nova lista |
+|:---:|:---:|
+| ![Listas](Imagens/13_home_listas.png) | ![Nova Lista](Imagens/12_home_nova_lista.png) |
+| Listas do mês agrupadas com resumo de itens, total e tags dos produtos | Formulário inline com seleção de mercado e opção de adicionar novo |
 
 ---
 
@@ -48,7 +48,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 | Navegação | Aparência | Tamanho da fonte | Dados |
 |:---:|:---:|:---:|:---:|
 | ![Navegação](Imagens/05_configuracoes_navegacao.png) | ![Aparência](Imagens/04_configuracoes_aparencia.png) | ![Fonte](Imagens/03_configuracoes_fonte.png) | ![Dados](Imagens/02_configuracoes_dados.png) |
-| Gesto de deslize e posição do botão ☰ | 7 paletas com modo escuro/claro | Slider de tamanho com preview ao vivo | Backup, restauração e limpeza de dados |
+| Botão voltar e posição da barra de navegação | 7 paletas + paleta personalizada com modo escuro/claro | Slider de tamanho com preview ao vivo | Backup, restauração e limpeza de dados |
 
 ---
 
@@ -79,15 +79,17 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 - **Criar listas** com nome, data automática e mercado selecionável
 - **Organização por mês** — o mês atual aparece expandido; meses anteriores ficam atrás do botão "Meses anteriores", agrupados por ano e mês, cada um colapsável individualmente
 - **Duplicar lista** — copia todos os itens para uma nova lista, com opção de zerar os valores e trocar o mercado
-- **Busca global** — filtra listas por nome, mercado ou itens
+- **Busca de histórico de preço** — pesquise qualquer item para ver o histórico completo de preços com data, mercado, valor e variação percentual
 - **Editar nome e mercado** — toque no cabeçalho da lista para editar inline
 - **Remover lista** — com confirmação para evitar exclusão acidental
 
 ### 📦 Itens da Lista
 
 - **Adicionar itens** com nome, quantidade e preço
-- **Autocompletar** — sugere nomes de itens já usados anteriormente
-- **Comparação de preço automática** — ao digitar o preço, mostra se está ▼ mais barato ou ▲ mais caro em relação à última compra
+- **Capitalização automática** — nomes de itens sempre salvos com a primeira letra maiúscula
+- **Nomes longos** — quebra de linha automática, sem cortar o conteúdo
+- **Autocompletar** — sugere nomes de itens já usados, com indicação quando o item já está na lista atual e atalho direto para edição
+- **Comparação de preço automática** — ao digitar o preço, mostra se está ▼ mais barato ou ▲ mais caro em relação à última compra em outra lista
 - **Seta de variação permanente** — persiste no item mesmo após marcá-lo como comprado
 - **Marcar/desmarcar** itens comprados com checkbox
 - **Editar item** — toque no ✏️ para corrigir nome, quantidade ou preço
@@ -101,14 +103,13 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 - **Gastos por ano** — gráfico horizontal e tabela de números por mês
 - **Gastos por mês** — gráfico de barras por lista com total mensal
 - **Comparação entre mercados** — total e média por estabelecimento
-- **Evolução de preço por produto** — gráfico de linha com histórico completo
 - Navega entre meses para comparar períodos
 
 ### ⚙️ Configurações
 
 #### Navegação
-- Ativar/desativar gesto de deslize para abrir o menu lateral
-- Posição do botão de menu (6 posições possíveis)
+- Comportamento do botão voltar na tela inicial: perguntar antes de sair, minimizar o app ou não fazer nada
+- Posição da barra de navegação: acima (topo) ou abaixo (base da tela)
 
 #### Aparência
 - **7 paletas de cores**, cada uma com modo escuro e claro:
@@ -119,6 +120,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
   - 🟣 **Catppuccin** — pastel techno
   - ⚫ **Meia-Noite** — OLED, preto absoluto `#000000`
   - 📄 **Papel** — tinta sobre papel, branco puro `#ffffff`
+- **🎨 Paleta personalizada** — crie sua própria paleta escolhendo as cores de fundo e destaque para modo escuro e claro, com prévia em tempo real
 
 #### Fonte
 - Controle de tamanho (11px a 22px) com slider e botões +/−
@@ -130,7 +132,7 @@ Aplicativo Android nativo para gerenciar listas de compras com histórico de pre
 
 ### 🔄 Atualizações
 - Botão **"Verificar atualização"** na tela Sobre — consulta o GitHub e exibe o changelog quando há novidade
-- Download do APK mais recente com um toque, sem precisar acessar o site
+- Download do APK mais recente com um toque, abrindo a página de releases no navegador
 - Verificação manual, sem consumo de dados em background
 
 ---
@@ -145,17 +147,17 @@ lista-compras-android/
 │   │   └── src/main/
 │   │       ├── AndroidManifest.xml   # Permissão de internet apenas para verificar atualizações
 │   │       ├── assets/public/
-│   │       │   ├── index.html        # App completo embutido (~266KB)
+│   │       │   ├── index.html        # App completo embutido (~278KB)
 │   │       │   └── bundle.js         # Bundle React minificado
 │   │       ├── java/com/listacompras/app/
-│   │       │   └── MainActivity.java # WebView + back button + dark mode bridge
+│   │       │   └── MainActivity.java # WebView + back button + AndroidBridge
 │   │       └── res/
 │   │           ├── mipmap-*/         # Ícones em todas as densidades
-│   │           └── values/themes.xml # Theme.Material.Light.NoActionBar
+│   │           └── values/themes.xml # Tema do sistema sem interferência na status bar
 │   └── gradle/wrapper/
 │       └── gradle-wrapper.properties # Gradle 8.5
 ├── src/
-│   └── App.jsx                       # Código-fonte React (~2200 linhas)
+│   └── App.jsx                       # Código-fonte React (~2800 linhas)
 ├── Imagens/                          # Screenshots do app
 ├── README.md                         # Este arquivo (pt-BR)
 └── README_EN.md                      # Versão em inglês
@@ -171,7 +173,7 @@ lista-compras-android/
 | **JavaScript (JSX)** | ES2017+ | Lógica da aplicação |
 | **esbuild** | latest | Bundler — compila e minifica o JSX |
 | **Android WebView** | — | Container nativo para o app web |
-| **Java** | 17 | MainActivity, back button, dark mode bridge |
+| **Java** | 17 | MainActivity, AndroidBridge, back button |
 | **Gradle** | 8.5 | Build system Android |
 | **Android Gradle Plugin** | 8.3.2 | Plugin de build Android |
 | **localStorage** | Web API | Persistência de dados e backups |
@@ -182,14 +184,16 @@ lista-compras-android/
 
 ## 🏗️ Arquitetura
 
-O app é uma **Single Page Application (SPA)** React compilada com esbuild em um único arquivo `index.html` de ~266KB. Esse arquivo é carregado por uma `WebView` Android nativa.
+O app é uma **Single Page Application (SPA)** React compilada com esbuild em um único arquivo `index.html` de ~278KB. Esse arquivo é carregado por uma `WebView` Android nativa.
 
 ### Bridge Java ↔ JavaScript
 
 ```javascript
-window.__androidDarkMode   // boolean — tema do sistema Android
-window.__androidBack       // function — handler do botão voltar
-window.__drawerOpen        // boolean — estado do menu lateral
+window.__androidDarkMode          // boolean — tema do sistema Android
+window.__androidBack              // function — handler do botão voltar
+window.AndroidBridge.openUrl(url) // abre URL no navegador externo
+window.AndroidBridge.exitApp()    // fecha o app
+window.AndroidBridge.minimizeApp()// minimiza para segundo plano
 ```
 
 ### Persistência (localStorage)
@@ -226,11 +230,10 @@ git clone https://github.com/thespation/lista-compras-android.git
 
 Comportamento em cascata:
 1. Fecha qualquer modal aberto
-2. Fecha o menu lateral se estiver aberto
-3. Dentro de uma lista → volta para a tela de listas
-4. Na tela Sobre → volta para Listas
-5. Em Listas/Análise/Configurações → abre o menu lateral
-6. Com menu lateral aberto → minimiza o app
+2. Dentro de uma lista → volta para Listas
+3. Em Análise ou Configurações → volta para Listas
+4. Na tela Sobre → volta para Configurações
+5. Na tela inicial → comportamento configurável (perguntar, minimizar ou nada)
 
 ---
 
