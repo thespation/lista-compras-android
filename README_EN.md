@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.6-5e81ac)
+![Version](https://img.shields.io/badge/version-1.7-5e81ac)
 ![Downloads](https://img.shields.io/github/downloads/thespation/lista-compras-android/total?label=downloads&color=81a1c1)
 ![Android](https://img.shields.io/badge/android-5.1%2B-88c0d0)
 
