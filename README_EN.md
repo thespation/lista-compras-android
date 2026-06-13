@@ -3,10 +3,10 @@
 > **[🇧🇷 Leia em Português](README.md)**
 
 <div align="center">
-
+<!-- 
 ![Version](https://img.shields.io/badge/version-1.7-5e81ac)
 ![Android](https://img.shields.io/badge/android-5.1%2B-88c0d0)
-<!-- ![Downloads](https://img.shields.io/github/downloads/thespation/lista-compras-android/total?label=downloads&color=81a1c1) -->
+![Downloads](https://img.shields.io/github/downloads/thespation/lista-compras-android/total?label=downloads&color=81a1c1) -->
 
 </div>
 
