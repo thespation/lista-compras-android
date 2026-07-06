@@ -1,71 +1,43 @@
 # 🛒 Shopping List
 
-> **[🇧🇷 Leia em Português](README.md)**
+> **[🇧🇷 Ler em Português](README.md)**
 
 <div align="center">
-<!-- 
-![Version](https://img.shields.io/badge/version-1.7-5e81ac)
+
+![Version](https://img.shields.io/github/v/release/thespation/lista-compras-android?label=version&color=5e81ac)
+![Released](https://img.shields.io/github/release-date/thespation/lista-compras-android?label=released&color=81a1c1)
 ![Android](https://img.shields.io/badge/android-5.1%2B-88c0d0)
-![Downloads](https://img.shields.io/github/downloads/thespation/lista-compras-android/total?label=downloads&color=81a1c1) -->
 
 </div>
 
-A native Android shopping list app with price history, spending analysis, and multiple color themes. Works **100% offline** — no data ever leaves your device.
+Native Android app for managing shopping lists with price history, spending analysis, and multiple color palettes. Works **100% offline** — no data ever leaves the phone.
 
 ---
 
 ## 📸 Screenshots
 
-### 🛒 Main Screen — Lists
-
-| Lists overview | Creating a new list | Side menu |
+| Lists | Annual Analysis | Monthly Analysis |
 |:---:|:---:|:---:|
-| ![Lists](Imagens/13_home_listas.png) | ![New List](Imagens/12_home_nova_lista.png) | ![Side Menu](Imagens/14_menu_lateral.png) |
-| Monthly lists grouped with item summary, total, and product tags | Inline form with store selection and option to add a new store | Navigation between Lists, Analysis, Settings, and About |
+| <img src="Imagens/01-listas.png" width="260"/> | <img src="Imagens/02-AnaliseAnual.png" width="260"/> | <img src="Imagens/03-AnaliseMensal.png" width="260"/> |
+| Summary cards, price history search, current month's lists and collapsible previous months | Yearly total, most/least expensive month and horizontal bar chart per month | Monthly total, comparison with previous month and items above historical average |
 
----
-
-### 📦 Inside a List
-
-| List items | Sorting menu | Edit item |
+| Products Analysis | Settings — Theme | Settings — Items |
 |:---:|:---:|:---:|
-| ![Items](Imagens/10_lista_itens.png) | ![Sorting](Imagens/09_lista_menu_ordenacao.png) | ![Edit](Imagens/11_editar_item.png) |
-| Items with checkbox, quantity, unit price, and total | 6 sort options + price variation filters + bulk actions | Edit with real-time price comparison and subtotal |
+| <img src="Imagens/04-AnaliseProduto.png" width="260"/> | <img src="Imagens/05-ConfiguracoesTema.png" width="260"/> | <img src="Imagens/06-ConfiguracoesItens.png" width="260"/> |
+| Per-product history with brand/weight, purchase count, average price and variation | Dark/Light mode, built-in and custom palettes, hide/restore themes | Font size, detailed mode (brand/weight) and price history period |
 
----
-
-### 📊 Spending Analysis
-
-| Annual analysis | Monthly analysis | Store comparison |
+| Settings — Behavior | Settings — Data | About |
 |:---:|:---:|:---:|
-| ![Annual](Imagens/08_analise_anual.png) | ![Monthly](Imagens/07_analise_mensal.png) | ![Stores](Imagens/06_analise_mercados.png) |
-| Horizontal bar chart by month with annual total | Bar chart per list with monthly total and month navigation | Store ranking by average price per purchase |
+| <img src="Imagens/07-ConfiguracoesComportamento.png" width="260"/> | <img src="Imagens/08-ConfiguracoesDados.png" width="260"/> | <img src="Imagens/09-ConfiguracoesSobre.png" width="260"/> |
+| Restock alert, haptic feedback, nav bar position and back button | Automatic backup, save/restore and more options | Version, developer, contact and update checker |
 
 ---
 
-### ⚙️ Settings
-
-| Navigation | Appearance | Font size | Data |
-|:---:|:---:|:---:|:---:|
-| ![Navigation](Imagens/05_configuracoes_navegacao.png) | ![Appearance](Imagens/04_configuracoes_aparencia.png) | ![Font](Imagens/03_configuracoes_fonte.png) | ![Data](Imagens/02_configuracoes_dados.png) |
-| Swipe gesture and ☰ button position | 7 themes with dark/light mode | Size slider with live preview | Backup, restore, and data wipe |
-
----
-
-### ℹ️ About
-
-<div align="center">
-  <img src="Imagens/01_sobre.png" width="280" alt="About screen"/>
-  <br/><sub>Version, developer, and update checker</sub>
-</div>
-
----
-
-## 📱 Download & Installation
+## 📱 Download and Installation
 
 1. Go to the [Releases](https://github.com/thespation/lista-compras-android/releases) page
-2. Download `app-release.apk`
-3. On Android: **Settings → Security → Install unknown apps** → enable for your file manager
+2. Download the `app-release.apk` file
+3. On Android: **Settings → Security → Install unknown apps** → enable it for your file manager
 4. Open the APK and tap **Install**
 
 > **Minimum requirement:** Android 5.1 (API 22)
@@ -76,62 +48,87 @@ A native Android shopping list app with price history, spending analysis, and mu
 
 ### 🛒 Shopping Lists
 
-- **Create lists** with a custom name, automatic date, and selectable store
-- **Organized by month** — current month expanded by default; older months behind a "Previous months" button, grouped by year and month, each collapsible individually
-- **Duplicate a list** — copies all items, with options to zero out prices and change the store
-- **Global search** — filter lists by name, store, or item
-- **Edit name & store** — tap the list header to edit inline
-- **Delete list** — with confirmation to prevent accidental removal
+- **Create lists** with name, date, and selectable market
+- **Editable date** — tap the header to edit name, market, and date; allows drafting lists and setting the actual purchase date later
+- **Base on a previous list** — when creating a new list, copy items from an existing list with prices reset to zero
+- **Future Lists** — collapsible section for lists dated in the future, with a visual indicator, kept separate from the current month
+- **Organized by month** — current month expanded; previous months grouped by year/month, each collapsible
+- **Duplicate list** — copies all items into a new list, with the option to reset prices and change the market
+- **Markets sorted by usage** — most-used markets appear first when creating a list
+- **Price history search** — search any item (by name or brand) to see its full history with date, market, price, and variation
+- **Clickable "This month" card** — jumps straight to Monthly Analysis for the current month
+- **Delete list** — with confirmation to prevent accidental deletion
 
 ### 📦 List Items
 
 - **Add items** with name, quantity, and price
-- **Autocomplete** — suggests names from previous purchases
-- **Automatic price comparison** — shows ▼ cheaper or ▲ more expensive vs. last purchase
-- **Permanent price arrow** — stays visible even after checking the item
-- **Check/uncheck** items as purchased
-- **Edit item** — tap ✏️ to fix name, quantity, or price
-- **6 sorting options**: insertion order, alphabetical, price, checked first/last
-- **Price variation filter** — show only cheaper or pricier items
-- **Live list total** updated in real time
-- **Check all / Uncheck all** in one tap
+- **Detailed mode (optional)** — extra fields for brand and weight/volume (kg, g, L, ml, unit), with brand autocomplete and automatic capitalization
+- **Bulk product editing** — in Analysis → Products, update a product's name, brand, and weight across all lists at once
+- **Automatic capitalization** — names are saved with the first letter capitalized
+- **Long names** — automatic line wrapping
+- **Autocomplete** — suggests previously used names (with brand/weight when filled in), flags when the item is already on the list, and auto-fills brand/weight/quantity from the most recent purchase
+- **Duplicate alert** — warning when adding an item already on the list
+- **Automatic price comparison** — shows ▼ cheaper or ▲ more expensive compared to that product's last purchase
+- **Editable quantity** — tapping the quantity field selects its value automatically
+- **Spending estimate** — when items are missing a price, the total shows "≈ TOTAL"
+- **Check/uncheck** purchased items with a checkbox and configurable haptic feedback
+- **Edit item** — tap ✏️ to fix name, quantity, price, brand, or weight
+- **Sorting** by 6 criteria: insertion order, alphabetical, price, checked first/last
+- **Variation filter** — show only items that got cheaper or more expensive
+- **Total at top or bottom** — choose whether the checked-count+total bar stays at the top or fixed at the bottom
+- **Export list** — as formatted text (grouped into "to buy"/"purchased" with subtotal) or as a file to import on another phone; both shareable via WhatsApp, email, etc.
+- **Check all / Uncheck all** at once
 
 ### 📊 Spending Analysis
 
-- **Annual spending** — horizontal chart and number table by month
-- **Monthly spending** — bar chart per list with monthly total
-- **Store comparison** — total and average per store
-- **Price history per product** — line chart with full history
-- Navigate between months to compare periods
+- **Overview card** — fixed at the top with yearly total, previous month (or last purchase), and this month with a ▲/▼ indicator
+- **Yearly spending** — horizontal bar chart per month, highlighting the most and least expensive months; tap a bar to jump to that month
+- **Monthly spending** — monthly total, spending per market with a visual bar, comparison with the previous period, and items above their historical average
+- **Products** — price history, recurrence, variation, full market ranking by price, and filters by period/market/sorting; products with the same brand are automatically differentiated, without duplicating legacy items missing a brand
+- **Restock alert** — suggests regularly purchased items that haven't appeared this month yet; each suggestion can be dismissed individually
 
 ### ⚙️ Settings
 
-#### Navigation
-- Enable/disable swipe gesture to open the side menu
-- Menu button position (6 positions available)
+Sections in order: **Theme → Items → Behavior → Data → About the App**
 
-#### Appearance
-- **7 color themes**, each with dark and light mode:
-  - 🟡 **Dourado** (Golden) — classic and elegant
-  - 🔵 **Nórdica** (Nordic) — clean arctic palette (Nord)
+#### Theme
+- **Dark/Light**
+- **7 color palettes**, each with dark and light modes:
+  - 🟡 **Golden** — classic and elegant
+  - 🔵 **Nordic** — arctic and clean (Nord)
   - 🟤 **Gruvbox** — retro and warm
   - 🌸 **Rosé Pine** — soft and floral
   - 🟣 **Catppuccin** — pastel techno
-  - ⚫ **Meia-Noite** (Midnight) — OLED, pure black `#000000`
-  - 📄 **Papel** (Paper) — ink on paper, pure white `#ffffff`
+  - ⚫ **Midnight** — OLED, absolute black `#000000`
+  - 📄 **Paper** — ink on paper, pure white `#ffffff`
+- **Hide themes** — ✕ button on each built-in theme; restore via a single collapsible row
+- **🎨 Custom palette** — build your own palette with a live preview
 
-#### Font
-- Size control (11px to 22px) with slider and +/− buttons
+#### Items
+- **Font size** — from 11px to 22px with a slider and +/− buttons
+- **Detailed mode** — enables brand and weight/volume fields when adding or editing items
+- **Price history** — how far back comparisons look (1 to 12 months)
+
+#### Behavior
+- **Suggest frequent items** — suggests regularly purchased items that aren't in the current month yet
+- **Vibrate on check** — haptic pulse when checking/unchecking a product
+- **Navigation bar position** — top or bottom of the screen
+- **Back button** on the home screen — ask before exiting, minimize the app, or do nothing
 
 #### Data
-- **💾 Save backup now** — snapshot saved to app's internal storage
-- **📂 View and restore backups** — list, restore, or delete individual backups
-- **🗑 Delete all data** — with confirmation modal
+- **Automatic backup** — enable/disable + frequency (monthly, quarterly, biannual, yearly); runs silently when the app opens, no notifications
+- **💾 Save settings** — local snapshot with date and time
+- **📂 Restore** — list, restore, or delete saved backups
+- **More options** (collapsible):
+  - **📤 Export everything** — save locally or share (WhatsApp, email, Drive, etc.)
+  - **📥 Import** — pick an exported file; automatically backs up current data before overwriting
+  - **🧹 Clear price history** — removes entries for items no longer in any current list (with confirmation)
+- **🗑 Delete all data** — automatically backs up before deleting, with confirmation
 
 ### 🔄 Updates
-- **"Check for updates"** button in the About screen — queries GitHub and shows the changelog when a new version is available
-- Direct APK download with one tap, no need to visit the website
-- Manual check only — no background data usage
+- **"Check for update"** button on the About screen — checks GitHub and shows the changelog with formatting (bold, headings, lists)
+- One-tap download of the latest APK
+- Manual check only, no background data usage
 
 ---
 
@@ -141,24 +138,25 @@ A native Android shopping list app with price history, spending analysis, and mu
 lista-compras-android/
 ├── android/                          # Android Studio project
 │   ├── app/
-│   │   ├── build.gradle              # Module config (AGP 8.3.2, compileSdk 34)
+│   │   ├── build.gradle              # Module config (AGP 8.3.2, compileSdk 34) + release signing
 │   │   └── src/main/
-│   │       ├── AndroidManifest.xml   # Internet permission for update checks only
+│   │       ├── AndroidManifest.xml   # Permissions: INTERNET and VIBRATE; FileProvider for sharing
 │   │       ├── assets/public/
-│   │       │   ├── index.html        # Full embedded app (~266KB)
-│   │       │   └── bundle.js         # Minified React bundle
+│   │       │   └── index.html        # Full app bundled inline
 │   │       ├── java/com/listacompras/app/
-│   │       │   └── MainActivity.java # WebView + back button + dark mode bridge
+│   │       │   └── MainActivity.java # WebView + AndroidBridge
 │   │       └── res/
-│   │           ├── mipmap-*/         # Icons for all densities
-│   │           └── values/themes.xml # Theme.Material.Light.NoActionBar
-│   └── gradle/wrapper/
-│       └── gradle-wrapper.properties # Gradle 8.5
+│   │           ├── mipmap-*/         # Icons at every density
+│   │           ├── xml/              # FileProvider configuration
+│   │           └── values/themes.xml # Theme with no status bar interference
+│   ├── gradle/wrapper/
+│   │   └── gradle-wrapper.properties # Gradle 8.5
+│   └── keystore/                     # Signing keystore (not versioned — see .gitignore)
 ├── src/
-│   └── App.jsx                       # React source (~2200 lines)
+│   └── App.jsx                       # React source code
 ├── Imagens/                          # App screenshots
-├── README.md                         # Portuguese version
-└── README_EN.md                      # This file
+├── README.md                         # This file (pt-BR)
+└── README_EN.md                      # English version
 ```
 
 ---
@@ -168,28 +166,40 @@ lista-compras-android/
 | Technology | Version | Purpose |
 |---|---|---|
 | **React** | 18.x | User interface |
-| **JavaScript (JSX)** | ES2017+ | Application logic |
-| **esbuild** | latest | Bundler — compiles and minifies JSX |
+| **JavaScript (JSX)** | ES2017+ | App logic |
+| **esbuild** | latest | Bundler — compiles and minifies the JSX |
 | **Android WebView** | — | Native container for the web app |
-| **Java** | 17 | MainActivity, back button, dark mode bridge |
+| **Java** | 17 | MainActivity, AndroidBridge, FileProvider |
 | **Gradle** | 8.5 | Android build system |
 | **Android Gradle Plugin** | 8.3.2 | Android build plugin |
-| **localStorage** | Web API | Data persistence and backups |
+| **AndroidX Core** | 1.12.0 | FileProvider support (file sharing) |
+| **localStorage** | Web API | Data and backup persistence |
 
-> No external frameworks, no database, no server. Data saved 100% on the device.
+> No external frameworks, no database, no server. Data stored 100% on the device.
 
 ---
 
 ## 🏗️ Architecture
 
-The app is a **Single Page Application (SPA)** built with React and bundled by esbuild into a single ~266KB `index.html`. This file is loaded by a native Android `WebView`.
+The app is a React **Single Page Application (SPA)** bundled with esbuild into a single `index.html` file. That file is loaded by a native Android `WebView`.
+
+### Product identification
+
+Products are grouped by name; brand and weight/volume only distinguish products when there's an actual conflict between filled-in values (two different brands, for example). Items with no brand set (legacy entries or simple mode) are automatically merged into the matching product, avoiding duplicates in Analysis.
 
 ### Java ↔ JavaScript Bridge
 
 ```javascript
-window.__androidDarkMode   // boolean — Android system theme
-window.__androidBack       // function — back button handler
-window.__drawerOpen        // boolean — side menu state
+window.__androidDarkMode             // boolean — Android system theme
+window.__androidBack                 // function — back button handler
+window.AndroidBridge.openUrl(url)    // opens URL in external browser
+window.AndroidBridge.exitApp()       // closes the app
+window.AndroidBridge.minimizeApp()   // minimizes to background
+window.AndroidBridge.vibrate(ms)     // haptic feedback (Android 8+)
+window.AndroidBridge.share(text)     // native text sharing
+window.AndroidBridge.shareFile(name, content)  // shares content as a real file (via FileProvider)
+window.AndroidBridge.saveFile(name, content)   // opens Android's "Save as" picker
+window.AndroidBridge.pickFile()      // opens the file picker for imports
 ```
 
 ### Persistence (localStorage)
@@ -197,40 +207,22 @@ window.__drawerOpen        // boolean — side menu state
 | Key | Content |
 |---|---|
 | `lista-compras-v2` | Lists, items, and price history |
-| `lista-compras-settings` | User preferences |
+| `lista-compras-settings` | User settings |
 | `lista-compras-backups` | Backup index |
-| `lista-compras-backup-{timestamp}` | Individual backup data |
+| `lista-compras-backup-{timestamp}` | Data for each individual backup |
 
 ---
 
-## 📲 How to Build the APK
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/thespation/lista-compras-android.git
-
-# 2. Open Android Studio
-# File → Open → select the android/ folder
-
-# 3. If you see "Invalid Gradle JDK": click "Use Embedded JDK"
-
-# 4. Wait for Gradle to sync
-
-# 5. Build → Build Bundle(s) / APK(s) → Build APK(s)
-# APK at: android/app/build/outputs/apk/debug/app-debug.apk
-```
-
----
-
-## 🎮 Navigation — Android Back Button
+## 🎮 Navigation — Back Button (Android)
 
 Cascading behavior:
-1. Closes any open modal
-2. Closes the side menu if open
-3. Inside a list → goes back to the lists screen
-4. On the About screen → goes back to Lists
-5. On Lists/Analysis/Settings → opens the side menu
-6. With side menu open → minimizes the app
+1. Closes any open modal or dropdown
+2. Closes any expanded accordion in Settings
+3. Collapses expanded details in Analysis → Products
+4. Inside a list → back to Lists
+5. In Analysis or Settings → back to Lists
+6. On the About screen → back to Settings
+7. On the home screen → configurable behavior (ask, minimize, or nothing)
 
 ---
 
@@ -244,4 +236,4 @@ Cascading behavior:
 
 ## 📄 License
 
-This project is for personal use. Feel free to use it as a reference or base for your own projects.
+This project is for personal use. Feel free to use it as a reference or as a base for your own projects.
