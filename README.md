@@ -5,7 +5,7 @@
 <div align="center">
 
 ![Versão](https://img.shields.io/github/v/release/thespation/lista-compras-android?label=vers%C3%A3o&color=5e81ac)
-![Lançado](https://img.shields.io/github/release-date/thespation/lista-compras-android?label=lan%C3%A7ado&color=81a1c1)
+![Lançado](https://img.shields.io/github/release-date/thespation/lista-compras-android?label=released&color=81a1c1)
 ![Android](https://img.shields.io/badge/android-5.1%2B-88c0d0)
 
 </div>
