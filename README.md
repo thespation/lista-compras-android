@@ -171,27 +171,6 @@ Seções em ordem: **Tema → Itens → Comportamento → Dados → Sobre o Apli
 
 ---
 
-## 🛠️ Compilando o projeto
-
-Requisitos: **Android Studio** recente (ou JDK 17–21 + Android SDK 34) e internet na primeira compilação (para baixar as dependências). O guia completo, com a solução dos erros mais comuns, está em [`COMO-COMPILAR.txt`](COMO-COMPILAR.txt).
-
-1. Abra a pasta **`android`** no Android Studio.
-2. **Gradle JDK**: em *Settings → Build, Execution, Deployment → Build Tools → Gradle*, escolha **jbr-21** (ou um JDK 17/21). Um JDK mais novo (como o 25) causa o erro *"Incompatible Gradle JVM version"* com o Gradle 8.5.
-3. **Assinatura**: o projeto assina o `debug` e o `release` com a mesma chave, que **não está no repositório**. Crie a sua:
-   ```bash
-   keytool -genkeypair -v -keystore android/keystore/lista-compras-release.keystore -alias lista-compras -keyalg RSA -keysize 2048 -validity 10000
-   ```
-   e crie `android/keystore/keystore.properties` com `storePassword=...`, `keyAlias=lista-compras` e `keyPassword=...` (ou defina a variável de ambiente `LC_KEYSTORE_PASSWORD`). Esses dois arquivos ficam fora do git (`.gitignore`). Um APK assinado com outra chave **não atualiza por cima** do APK oficial: é preciso desinstalar antes.
-4. Gere o APK (dentro da pasta `android`):
-   ```bash
-   ./gradlew assembleRelease      # Windows: gradlew.bat assembleRelease
-   ```
-   O arquivo sai em `android/app/build/outputs/apk/release/app-release.apk` (o release usa R8; o `assembleDebug` gera um APK sem otimização).
-
-> O `index.html` em `assets/public` é o resultado da compilação de `src/App.jsx` (React 18 + esbuild, em um único arquivo). O script que o gera não faz parte deste repositório.
-
----
-
 ## 🗂️ Estrutura do Projeto
 
 ```
