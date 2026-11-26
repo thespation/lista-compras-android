@@ -171,27 +171,6 @@ Sections in order: **Theme → Items → Behavior → Data → About the App**
 
 ---
 
-## 🛠️ Building the project
-
-Requirements: a recent **Android Studio** (or JDK 17–21 + Android SDK 34) and internet on the first build (to download dependencies). The full guide, with fixes for the most common errors, is in [`COMO-COMPILAR.txt`](COMO-COMPILAR.txt) (in Portuguese).
-
-1. Open the **`android`** folder in Android Studio.
-2. **Gradle JDK**: in *Settings → Build, Execution, Deployment → Build Tools → Gradle*, pick **jbr-21** (or a JDK 17/21). A newer JDK (such as 25) causes the *"Incompatible Gradle JVM version"* error with Gradle 8.5.
-3. **Signing**: the project signs both `debug` and `release` with the same key, which is **not in the repository**. Create your own:
-   ```bash
-   keytool -genkeypair -v -keystore android/keystore/lista-compras-release.keystore -alias lista-compras -keyalg RSA -keysize 2048 -validity 10000
-   ```
-   and create `android/keystore/keystore.properties` with `storePassword=...`, `keyAlias=lista-compras` and `keyPassword=...` (or set the `LC_KEYSTORE_PASSWORD` environment variable). Both files stay out of git (`.gitignore`). An APK signed with a different key **cannot update over** the official APK: you have to uninstall first.
-4. Build the APK (inside the `android` folder):
-   ```bash
-   ./gradlew assembleRelease      # Windows: gradlew.bat assembleRelease
-   ```
-   The file is produced at `android/app/build/outputs/apk/release/app-release.apk` (release uses R8; `assembleDebug` produces an unoptimized APK).
-
-> The `index.html` in `assets/public` is the compiled result of `src/App.jsx` (React 18 + esbuild, as a single file). The script that generates it is not part of this repository.
-
----
-
 ## 🗂️ Project Structure
 
 ```
